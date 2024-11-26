@@ -139,9 +139,9 @@ def main_Z(log__dict, log__, min_sleep_time = 10, max_sleep_time = 30):
     N_all = "学习通签到列表："
     B = f"学习通签到  {now.strftime('%Y-%m-%d')}"
     for i in log__:
-        time_random_ = random.randint(min_sleep_time * 60, max_sleep_time * 60)
-        print("随机延时分钟："+str(time_random_/60))
-        time.sleep(time_random_)
+        # time_random_ = random.randint(min_sleep_time * 60, max_sleep_time * 60)
+        # print("随机延时分钟："+str(time_random_/60))
+        # time.sleep(time_random_)
 
         # 登录
         cookies = login(log__dict[i][0], log__dict[i][1])
@@ -162,7 +162,7 @@ def main_Z(log__dict, log__, min_sleep_time = 10, max_sleep_time = 30):
         print(name + "：" + text_)
         now = data_()
         N = f"{now.strftime('%Y-%m-%d %H:%M:%S')}"+"   "+name+"："+text_
-        sendMail(B, N, log__dict[i][3])
+        # sendMail(B, N, log__dict[i][3])
         N_all = N_all + "\n" + N
     sendMail(B, N_all, '2241007756@qq.com')
     return
@@ -175,10 +175,18 @@ if __name__ == '__main__':
     C = ["18733938365", "6693844835c",
          ['河北省邯郸市峰峰矿区', '114.13073,36.48094'],
          '2966268079@qq.com']
+    Y = ["13690941874", "yll875875.",
+         ['河北省邢台市信都区泉南西大街473号', '114.460689,37.091852'],
+         "2981832209@qq.com"]
+    W = ["18830861190", "wzh861190",
+         ['河北省邢台市信都区泉南西大街473号', '114.460689,37.091852'],
+         "3445945379@qq.com"]
     log__dict = {
         "L" : L,
         "C" : C,
+        "Y" : Y,
+        "W" : W
     }
-    log__ = "LC"
+    log__ = "LCYW"
 
     main_Z(log__dict, log__)
