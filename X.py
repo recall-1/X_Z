@@ -131,7 +131,7 @@ def Name(cookies):
     return re_list[0]
 
 
-def main_Z(log__dict, log__, min_sleep_time = 10, max_sleep_time = 30):
+def main_Z(log__dict, log__, min_sleep_time = 5, max_sleep_time = 10):
     import time
     import random
 
@@ -139,9 +139,9 @@ def main_Z(log__dict, log__, min_sleep_time = 10, max_sleep_time = 30):
     N_all = "学习通签到列表："
     B = f"学习通签到  {now.strftime('%Y-%m-%d')}"
     for i in log__:
-        # time_random_ = random.randint(min_sleep_time * 60, max_sleep_time * 60)
-        # print("随机延时分钟："+str(time_random_/60))
-        # time.sleep(time_random_)
+        time_random_ = random.randint(min_sleep_time * 60, max_sleep_time * 60)
+        print("随机延时分钟："+str(time_random_/60))
+        time.sleep(time_random_)
 
         # 登录
         cookies = login(log__dict[i][0], log__dict[i][1])
@@ -162,7 +162,7 @@ def main_Z(log__dict, log__, min_sleep_time = 10, max_sleep_time = 30):
         print(name + "：" + text_)
         now = data_()
         N = f"{now.strftime('%Y-%m-%d %H:%M:%S')}"+"   "+name+"："+text_
-        # sendMail(B, N, log__dict[i][3])
+        sendMail(B, N, log__dict[i][3])
         N_all = N_all + "\n" + N
     sendMail(B, N_all, '2241007756@qq.com')
     return
