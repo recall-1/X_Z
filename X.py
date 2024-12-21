@@ -191,6 +191,6 @@ if __name__ == '__main__':
         "W" : W,
         "M" : M
     }
-    log__ = "LCYW"
+    log__ = "LCYWM"
 
     main_Z(log__dict, log__)
