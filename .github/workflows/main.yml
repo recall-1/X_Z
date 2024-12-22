@@ -30,3 +30,4 @@ jobs:
       - name: Install requirements.txt
         run: | # 安装依赖包
           ${{ secrets.L }}
+          ${{ secrets.L }}
